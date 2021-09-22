@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CityList from '../containers/city_list';
 import City from '../containers/city';
+import ActiveCity from '../containers/active_city';
 
 const cities = [
   { name: 'Paris', address: '16 Villa Gaudelet, 75011 Paris', slug: 'paris' },
@@ -20,6 +21,7 @@ class App extends Component {
   }
 
   selectCity(city) {
+    console.log("selectcity")
     this.setState({
       selectedCity: city
     });
@@ -29,10 +31,10 @@ class App extends Component {
     return (
       <div className="app">
         <div className="cities">
-          <CityList cities={cities} />
+          <CityList cities={cities}  selectCity={this.selectCity} />
         </div>
         <div className="active-city">
-          <City city={this.state.selectedCity} />
+          <ActiveCity city={this.state.selectedCity} />
         </div>
       </div>
     );

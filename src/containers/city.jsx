@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import selectCity from '../components/app'
 
 class City extends Component {
 
+
   handleClick = () => {
-    console.log('click')
-    if (this.props.selectCity) {
+    if (this.props.city) {
       this.props.selectCity(this.props.city)
     }
   }
-
 
   render() {
     const { city } = this.props;
@@ -18,9 +16,10 @@ class City extends Component {
     }
 
     return (
-      <div className="list-group-item" onClick={props.handleClick()}>
-        <h3 > { this.props.city.name }</h3>
-      </div>
+      <li
+        className="list-group-item"
+        onClick={() => this.handleClick(this.props.city)}
+        >{this.props.city.name}</li>
     );
   }
 }
