@@ -1,6 +1,5 @@
 const activeCityReducer = (state, action) => {
   if (state === undefined) {
-    console.log("reducer null")
     return null;
   }
 
