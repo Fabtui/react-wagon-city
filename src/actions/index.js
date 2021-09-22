@@ -13,10 +13,3 @@ export default function selectCity(city) {
     payload: city
   };
 }
-
-export function activeCity(city) {
-  return {
-    type: 'ACTIVE_CITY',
-    payload: city
-  }
-}
